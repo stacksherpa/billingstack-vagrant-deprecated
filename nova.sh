@@ -161,9 +161,9 @@ service nova-volume restart
 service libvirt-bin restart
 /etc/init.d/rabbitmq-server restart
 
-nova-manage service list
-
 sleep 2
+
+nova-manage service list
 
 nova-manage network create private --fixed_range_v4=10.0.0.0/24 --bridge_interface=br100 --num_networks=1 --network_size=256
 

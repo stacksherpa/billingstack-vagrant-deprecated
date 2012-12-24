@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 PASSWORD=secret0
 
 apt-get update
@@ -12,7 +14,7 @@ EOF
 
 apt-get update
 
-apt-get install -y vim mysql-client-core-5.5 python-mysqldb
+apt-get install -y curl vim mysql-client-core-5.5 python-mysqldb
 
 cat > openrc <<EOF
 export OS_USERNAME=admin

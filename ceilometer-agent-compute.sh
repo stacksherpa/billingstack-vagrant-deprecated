@@ -5,9 +5,9 @@
 
 function install_ceilometer_agent_compute() {
 	
-	wget http://tarballs.openstack.org/ceilometer/ceilometer-2013.1~g2~20121222.427.tar.gz > /dev/null 2>&1
-
-	tar xfz ceilometer-2013.1~g2~20121222.427.tar.gz
+	#wget http://tarballs.openstack.org/ceilometer/ceilometer-2013.1~g2~20121222.427.tar.gz > /dev/null 2>&1
+	#tar xfz ceilometer-2013.1~g2~20121222.427.tar.gz
+	git clone http://github.com/openstack/ceilometer ceilometer-2013.1
 
 	cat > /home/vagrant/ceilometer-2013.1/tools/pip-requires << EOF
 	webob
