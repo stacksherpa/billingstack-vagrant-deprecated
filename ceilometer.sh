@@ -20,9 +20,9 @@ EOF
 
 source openrc
 
-wget http://tarballs.openstack.org/ceilometer/ceilometer-2013.1~g2~20121222.427.tar.gz > /dev/null 2>&1
-
-tar xfz ceilometer-2013.1~g2~20121222.427.tar.gz
+#wget http://tarballs.openstack.org/ceilometer/ceilometer-2013.1~g2~20121222.427.tar.gz > /dev/null 2>&1
+#tar xfz ceilometer-2013.1~g2~20121222.427.tar.gz
+git clone http://github.com/openstack/ceilometer ceilometer-2013.1
 
 sed -i "s|acl.install(app, cfg.CONF)|acl.install(app, dict(cfg.CONF))|g" /home/vagrant/ceilometer-2013.1/ceilometer/api/v1/app.py
 
