@@ -30,3 +30,11 @@ source /vagrant/keystone.sh
 source /vagrant/glance.sh
 source /vagrant/nova.sh
 source /vagrant/ceilometer-agent-compute.sh
+
+install_ceilometer_agent_compute
+
+configure_ceilometer_agent_compute
+
+ceilometer-agent-compute &
+
+echo "CEILOMETER AGENT STARTED!"
