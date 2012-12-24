@@ -27,8 +27,15 @@ Vagrant::Config.run do |config|
   config.vm.define :ceilometer do |vm_config|
     vm_config.vm.host_name = "ceilometer.stacksherpa.com"
     vm_config.vm.network :hostonly, "10.20.30.60"
-    vm_config.vm.customize ["modifyvm", :id, "--memory", "1024"]
+    vm_config.vm.customize ["modifyvm", :id, "--memory", "2048"]
     vm_config.vm.provision :shell, :path => "ceilometer.sh"
+  end
+
+  config.vm.define :api do |vm_config|
+    vm_config.vm.host_name = "api.stacksherpa.com"
+    vm_config.vm.network :hostonly, "10.20.30.70"
+    vm_config.vm.provision :shell, :path => "front.sh"
+    vm_config.vm.customize ["modifyvm", :id, "--memory", "1024"]
   end
 
   # The url from where the 'config.vm.box' box will be fetched if it
