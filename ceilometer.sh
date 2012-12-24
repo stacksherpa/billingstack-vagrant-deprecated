@@ -64,9 +64,9 @@ mkdir /var/log/ceilometer
 
 sleep 3
 
-ceilometer-agent-central &
-ceilometer-collector &
-ceilometer-api &
+ceilometer-agent-central -d -v --log-dir /var/log/ceilometer --log-file agent-central.log &
+ceilometer-collector -d -v --log-dir /var/log/ceilometer --log-file collector.log &
+ceilometer-api -d -v --log-dir /var/log/ceilometer --log-file api.log &
 
 #git clone https://github.com/openstack/python-ceilometerclient
 
