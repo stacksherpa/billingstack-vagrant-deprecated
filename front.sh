@@ -36,7 +36,7 @@ upstream keystone  {
 
 server {
 	listen 80;
-	server_name keystone.stacksherpa.com
+	server_name keystone.stacksherpa.com;
 	
 	location / {
 		proxy_pass  http://keystone;
@@ -50,7 +50,7 @@ upstream identity  {
 
 server {
 	listen 80;
-	server_name identity.stacksherpa.com
+	server_name identity.stacksherpa.com;
 	
 	location / {
 		proxy_pass  http://identity;
@@ -64,7 +64,7 @@ upstream compute  {
 
 server {
 	listen 80;
-	server_name compute.stacksherpa.com
+	server_name compute.stacksherpa.com;
 	
 	location / {
 		proxy_pass  http://compute;
@@ -78,7 +78,7 @@ upstream images  {
 
 server {
 	listen 80;
-	server_name images.stacksherpa.com
+	server_name images.stacksherpa.com;
 	
 	location / {
 		proxy_pass  http://images;
@@ -92,7 +92,7 @@ upstream metering  {
 
 server {
 	listen 80;
-	server_name metering.stacksherpa.com
+	server_name metering.stacksherpa.com;
 	
 	location / {
 		proxy_pass  http://metering;
@@ -106,7 +106,7 @@ upstream dashboard  {
 
 server {
 	listen 80;
-	server_name dashboard.stacksherpa.com
+	server_name dashboard.stacksherpa.com;
 	
 	location / {
 		proxy_pass  http://dashboard;
