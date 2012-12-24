@@ -19,7 +19,6 @@ Vagrant::Config.run do |config|
     vm_config.vm.host_name = "aio.stacksherpa.com"
     vm_config.vm.network :hostonly, "10.20.30.50"
     vm_config.vm.customize ["modifyvm", :id, "--memory", "4096"]
-    vm_config.vm.forward_port 80, 9080
     vm_config.vm.provision :shell, :path => "aio.sh"
     #vm_config.vm.customize ["modifyvm", :id, "--nicpromiscX", "allow-all"]
   end
@@ -34,6 +33,7 @@ Vagrant::Config.run do |config|
   config.vm.define :api do |vm_config|
     vm_config.vm.host_name = "api.stacksherpa.com"
     vm_config.vm.network :hostonly, "10.20.30.70"
+	vm_config.vm.forward_port 80, 9080
     vm_config.vm.provision :shell, :path => "front.sh"
     vm_config.vm.customize ["modifyvm", :id, "--memory", "1024"]
   end
