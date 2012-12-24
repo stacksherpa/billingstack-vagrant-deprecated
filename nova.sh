@@ -159,7 +159,6 @@ service nova-scheduler restart
 service nova-novncproxy restart
 service nova-volume restart
 service libvirt-bin restart
-/etc/init.d/rabbitmq-server restart
 
 sleep 2
 
