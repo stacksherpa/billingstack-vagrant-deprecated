@@ -18,6 +18,10 @@ Vagrant::Config.run do |config|
   config.vm.define :aio do |vm_config|
     vm_config.vm.host_name = "aio.stacksherpa.com"
     vm_config.vm.network :hostonly, "10.20.30.50"
+    vm_config.vm.forward_port 5000, 5000
+    vm_config.vm.forward_port 35357, 35357
+    vm_config.vm.forward_port 8774, 8774
+    vm_config.vm.forward_port 9292, 9292
     vm_config.vm.customize ["modifyvm", :id, "--memory", "4096"]
     vm_config.vm.provision :shell, :path => "aio.sh"
     #vm_config.vm.customize ["modifyvm", :id, "--nicpromiscX", "allow-all"]
@@ -26,6 +30,7 @@ Vagrant::Config.run do |config|
   config.vm.define :ceilometer do |vm_config|
     vm_config.vm.host_name = "ceilometer.stacksherpa.com"
     vm_config.vm.network :hostonly, "10.20.30.60"
+    vm_config.vm.forward_port 8777, 8777
     vm_config.vm.customize ["modifyvm", :id, "--memory", "2048"]
     vm_config.vm.provision :shell, :path => "ceilometer.sh"
   end
